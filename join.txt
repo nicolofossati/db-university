@@ -15,11 +15,20 @@ FROM `courses`
 JOIN `degrees` ON `courses`.`degree_id` = `degrees`.`id`
 WHERE `degrees`.`name` = 'Laurea Magistrale del Dipartimento di Neuroscienze';
 
-dovrebbe essere giusto ma non trovo l'errore. Per ora  lo lascio da parte
+//dovrebbe essere giusto ma non trovo l'errore. Per ora  lo lascio da parte
 
 
 
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+SELECT * 
+FROM `courses`
+JOIN `course_teacher` ON `course_teacher`.`teacher_id` = `courses`.`id`
+JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+WHERE `teachers`.`name` = "Fulvio"
+AND `teachers`.`surname` = "Amato";
+
+//da valutare che sia giusto
 
 
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il
