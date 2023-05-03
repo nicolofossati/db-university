@@ -39,6 +39,14 @@ JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
 JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id`
 JOIN `departments` ON `department_id` = `departments`.`id`;
 
+//DOPO LA CORREZIONE IN CLASSE
+SELECT DISTINCT `students`.`id` AS 'students id', `students`.`surname`, `students`.`name`, `degrees`.*, `departments`.`name`
+FROM `students`
+JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id`
+JOIN `departments` ON `department_id` = `departments`.`id`
+ORDER BY `students`.`surname`,`students`.`name`;
+
 ---------------------------------------------------------------------------------------------------------------------------
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
